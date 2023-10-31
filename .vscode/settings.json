@@ -7,5 +7,16 @@
   },
   "[prisma]": {
     "editor.formatOnSave": true
-  }
+  },
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "redwoodLocalDocker",
+      "database": "postgres",
+      "username": "postgres"
+    }
+  ]
 }
