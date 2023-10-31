@@ -103,19 +103,14 @@ export const handler = async (event, context) => {
     // If this returns anything else, it will be returned by the
     // `signUp()` function in the form of: `{ message: 'String here' }`.
     handler: ({ username, hashedPassword, salt, userAttributes }) => {
-      // Creating a user is normal operation but this would allow anyone accessing the site to create an admin user.
-      // return db.user.create({
-      //   data: {
-      //     email: username,
-      //     hashedPassword: hashedPassword,
-      //     salt: salt,
-      //     // name: userAttributes.name
-      //   },
-
-      //Returning false block hackers from creating new users
-        return false;
-      }
-      // )
+      return db.user.create({
+        data: {
+          email: username,
+          hashedPassword: hashedPassword,
+          salt: salt,
+          // name: userAttributes.name
+        },
+      })
     },
 
     // Include any format checks for password here. Return `true` if the
